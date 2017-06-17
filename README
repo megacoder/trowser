@@ -1,0 +1,84 @@
+[$Id: README,v 1.1.1.1 2009/07/16 02:15:40 reynolds Exp $]
+
+ABOUT TROWSER
+=============
+
+Trowser is a browser for large line-oriented text files (e.g. debug traces)
+implemented in Tcl/Tk.  It's meant as an alternative to "less". Compared
+to less, trowser adds color highlighting, a persistent search history,
+graphical bookmarking, separate search result (i.e. filter) windows and
+flexible skipping of input from pipes to STDIN.  Trowser has a graphical
+interface, but is designed to allow browsing via the keyboard at least
+to the same extent as less. Key bindings and the cursor positioning
+concept are derived from vim.
+
+Note: in this context "line-oriented" denotes that each line of text is
+considered a data unit.  Color highlighting (including search matches)
+will always apply the highlight to the complete text line.
+
+For more details and options please refer to the manual page.
+
+
+INSTALL
+=======
+
+If you're using a Debian, Ubuntu or a compatible Linux distribution, you
+should install the "deb" package using:
+
+$ dpkg -i trowser_?.?-?_all.deb
+
+This will place the executable under /usr/bin and the manual page under
+/usr/share/man. If that fails, proceed as described in the following:
+
+Manual installation is very simple: To install trowser into /usr/bin
+and the manual page into /usr/share/man perform the following steps in
+your shell.  Of course you can instell trowser also in any other
+directory in your search path instead.
+
+$ cp trowser.tcl /usr/bin/trowser
+$ cp trowser.1 /usr/share/man/man1/trowser.1
+
+If trowser fails to start or aborts with an interpreter error, you should
+check if Tcl/Tk is installed and has the required version by entering the
+following command line in a terminal window (i.e. in a shell):
+
+$ echo 'puts $tcl_patchLevel;exit' | wish
+
+In some Tcl/Tk installations "wish" as such may not exist, but instead the
+major and minor version are appended to the executable name (e.g."wish8.5".)
+In this case, change the third line in the trowser.tcl script file accordingly.
+
+As of writing this, trowser is tested against Tcl/Tk version 8.5.6. If the
+above command returns a version older than 8.4.0, you'll have to upgrade
+your Tcl/Tk library.
+
+
+AUTHOR
+======
+
+This program was developed since April 2007 by Tom Zoerner.
+
+The official homepage is http://www.nefkom.net/tomzo/prj/trowser/
+
+To report bugs please send an email to tomzo@users.sourceforge.net
+Feature requests are also welcome.
+
+
+COPYRIGHT
+=========
+
+Copyright (C) 2007-2009 Th. "Tom" Zoerner. All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
